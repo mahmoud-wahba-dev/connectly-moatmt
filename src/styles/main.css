@@ -1,0 +1,635 @@
+@import "tailwindcss";
+@plugin "flyonui";
+/* @plugin "@iconify/tailwind4"; */
+@import "flyonui/variants.css";
+@source "flyonui/dist/index.js";
+@plugin "@iconify/tailwind4";
+/* ----------------------- */
+
+html {
+  font-size: clamp(12px, 1vw + 0.5rem, 16px);
+  font-family: var(--font-ibm);
+}
+body {
+  color: black;
+}
+
+:root {
+  scroll-behavior: smooth;
+
+  /* Primary brand color (used for btn-primary, etc) */
+  --primary: #ed2d48;
+  --secondary: #d2ffe3;
+
+  /* White text on primary */
+
+  /* --dark-black: #464646; */
+
+  /* Secondary accent color */
+  /* For contrast on secondary bg */
+
+  /* Error/danger color */
+  --error: #ff4444;
+
+  /* DaisyUI expected variable names */
+  --color-primary: #ed2d48;
+
+  --color-secondary: #d2ffe3;
+
+  --color-gray: #6d6d6d;
+}
+
+@theme {
+  --font-ibm:
+    "IBM Plex Sans Arabic", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto;
+
+  --color-primary: #ed2d48;
+  --color-secondary: #d2ffe3;
+  --color-green: #0a381c;
+  --color-error: #ff3c3f;
+  --color-success: #00cf3e;
+  --color--black: black;
+  --color-gray: #6d6d6d;
+
+  /* Navbar colors */
+  --color-nav-bg: #000000;
+  --color-nav-text: #ffffff;
+
+  --color-d3: #d3d3d3;
+  --color-f1: #f1f1f1;
+  --color-f6: #f6f6f6;
+  --color-69: #696969;
+  --color-dd: #dddddd;
+  --color-40: #404040;
+  --color-f8: #f8f8f8;
+  --color-f4: #f4f4f4;
+  --color-f9: #f9f9f9;
+  --color-d9: #d9d9d9;
+  --color-7e: #7e7e7e;
+  --color-77: #777777;
+
+  /* --color-f2: #f2f2f2;
+
+  --color-dark: #141b34;
+  --color-grey: #595959;
+  --color-des: var(--color-grey);
+  --color-74: #747474;
+  --color-74: #747474;
+  --color-4d: #4d4c4c;
+  --color-de: #dedede;
+  --color-e2: #e2e2e2;
+  --color-71: #717171;
+  --color-e5: #e5e5e5;
+  --color-89: #898888;
+  --color-d4: #d4d4d4;
+  --color-70: #707070;
+  --color-e6: #e6e6e6;
+  --color-a8: #a8a8a8;
+  --color-91: #919191;
+  --color-58: #585858; */
+
+  /* --color-dark-black: #464646;
+  --color-body: #f8f8f8;
+  --color-dot: #55cdff;
+ */
+
+  /* Custom font sizes (px → rem) */
+  --text-8px: 0.5rem;
+  /* 8px */
+  --text-9px: 0.5625rem;
+  /* 9px */
+  --text-10px: 0.625rem;
+  /* 10px */
+  --text-11px: 0.6875rem;
+  /* 11px */
+  --text-12px: 0.75rem;
+  /* 12px */
+  --text-13px: 0.8125rem;
+  /* 13px */
+  --text-14px: 0.875rem;
+  /* 14px */
+  --text-15px: 0.9375rem;
+  /* 15px */
+  --text-16px: 1rem;
+  /* 16px */
+  --text-17px: 1.0625rem;
+  /* 17px */
+  --text-18px: 1.125rem;
+  /* 18px */
+  --text-19px: 1.1875rem;
+  /* 19px */
+  --text-20px: 1.25rem;
+  /* 20px */
+  --text-21px: 1.3125rem;
+  /* 21px */
+  --text-22px: 1.375rem;
+  /* 22px */
+  --text-24px: 1.5rem;
+  /* 24px */
+  --text-25px: 1.5625rem;
+  /* 25px */
+  --text-28px: 1.75rem;
+  /* 28px */
+  --text-30px: 1.875rem;
+  /* 30px */
+  --text-32px: 2rem;
+  /* 32px */
+  --text-33px: 2rem;
+  /* 33px */
+  --text-34px: 2.125rem;
+  /* 34px */
+  --text-35px: 2.1875rem;
+  /* 35px */
+  --text-36px: 2.25rem;
+  /* 36px */
+  --text-40px: 2.5rem;
+  /* 40px */
+  --text-42px: 2.625rem;
+  /* 42px */
+  --text-45px: 2.8125rem;
+  /* 45px */
+  --text-48px: 3rem;
+  /* 48px */
+  --text-52px: 3.25rem;
+  /* 52px */
+  --text-60px: 3.75rem;
+  /* 60px */
+  --text-64px: 4rem;
+  /* 64px */
+  --text-65px: 4.0625rem;
+  /* 65px */
+  --text-72px: 4.5rem;
+  /* 72px */
+  --text-76px: 4.75rem;
+  /* 76px */
+
+  /* Custom border-radius (px → rem) */
+  --radius-4px: 0.25rem;
+  /* 4px */
+  --radius-5px: 0.3125rem;
+  /* 5px */
+
+  --radius-6px: 0.375rem;
+  /* 6px */
+  --radius-8px: 0.5rem;
+  /* 8px */
+  --radius-9px: 0.5625rem;
+  /* 9px */
+  --radius-10px: 0.625rem;
+  /* 10px */
+  --radius-11px: 0.6875rem;
+  /* 11px */
+  --radius-12px: 0.75rem;
+  /* 12px */
+  --radius-13px: 0.8125rem;
+  /* 13px */
+  --radius-14px: 0.875rem;
+  /* 14px */
+  --radius-15px: 0.9375rem;
+  /* 15px */
+  --radius-16px: 1rem;
+  /* 16px */
+  --radius-17px: 1.0625rem;
+  /* 17px */
+  --radius-18px: 1.125rem;
+  /* 18px */
+  --radius-19px: 1.1875rem;
+  /* 19px */
+  --radius-20px: 1.25rem;
+  /* 20px */
+  --radius-21px: 1.3125rem;
+  /* 21px */
+  --radius-22px: 1.375rem;
+  /* 22px */
+  --radius-28px: 1.75rem;
+  /* 28px */
+
+  --radius-24px: 1.5rem;
+  /* 24px */
+  --radius-30px: 1.875rem;
+  /* 30px */
+  --radius-32px: 2rem;
+  /* 32px */
+
+  --radius-40px: 2.5rem;
+  /* 40px */
+  --radius-44px: 2.75rem;
+  /* 44px */
+  --radius-45px: 2.8125rem;
+  /* 45px */
+
+  --radius-53px: 3.3125rem;
+  /* 53px */
+  --radius-55px: 3.4375rem;
+  /* 55px */
+  --radius-58px: 3.625rem;
+  /* 58px */
+  --radius-60px: 4rem;
+  /* 60px */
+  --radius-65px: 4.0625rem;
+  /* 65px */
+  --radius-66px: 4.125rem;
+  /* 66px */
+  --radius-67px: 4.1875rem;
+  /* 67px */
+
+  --radius-80px: 5rem;
+  /* 80px */
+  --radius-100px: 6.25rem;
+}
+
+/* ========================
+   Container Styles
+======================== */
+@layer utilities {
+  .container {
+    @apply w-full mx-auto max-w-full sm:px-10 px-3.5;
+  }
+
+  .center_flex,
+  .center,
+  .centered {
+    @apply flex justify-center items-center;
+  }
+}
+
+.btn-black {
+  background-color: var(--color--black);
+  color: white;
+}
+
+/* ========================
+   Ramadan Animation Library
+======================== */
+
+@layer utilities {
+  /* Entrance Animations */
+  @keyframes bounce-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pop-in-stagger {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes scale-reveal {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes flip-in {
+    0% {
+      opacity: 0;
+      transform: rotateY(90deg);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateY(0);
+    }
+  }
+
+  @keyframes slide-in-alt {
+    0% {
+      opacity: 0;
+      transform: translateX(var(--slide-direction, 40px));
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Ambient/Floating Animations */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+
+  @keyframes float-slow {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes float-rotate {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(3deg);
+    }
+  }
+
+  @keyframes drift-horizontal {
+    0%,
+    100% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(20px);
+    }
+  }
+
+  @keyframes rotate-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Ramadan-Specific Glows & Pulses */
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 10px rgba(210, 255, 227, 0.3);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(210, 255, 227, 0.6);
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 8px rgba(210, 255, 227, 0.4);
+    }
+    50% {
+      opacity: 0.8;
+      box-shadow: 0 0 16px rgba(210, 255, 227, 0.8);
+    }
+  }
+
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.85;
+    }
+  }
+
+  @keyframes pulse-gold {
+    0%,
+    100% {
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 24px rgba(255, 215, 0, 0.6);
+    }
+  }
+
+  /* Twinkle/Blink for Stars */
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes twinkle-delayed {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.35;
+    }
+  }
+
+  /* Parallax-like Slow Movement */
+  @keyframes parallax-slow {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes fade-in-slow {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Text Word Bounce (for splitting headlines) */
+  @keyframes word-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  /* Utility Classes */
+  .animate-bounce-in {
+    animation: bounce-in 0.6s ease-out;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-pop-in-stagger {
+    animation: pop-in-stagger 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-scale-reveal {
+    animation: scale-reveal 0.7s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-flip-in {
+    animation: flip-in 0.6s ease-out;
+    perspective: 1000px;
+  }
+
+  .animate-slide-in-alt {
+    animation: slide-in-alt 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 4s ease-in-out infinite;
+  }
+
+  .animate-float-rotate {
+    animation: float-rotate 4s ease-in-out infinite;
+  }
+
+  .animate-drift-horizontal {
+    animation: drift-horizontal 5s ease-in-out infinite;
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 8s linear infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 1.5s ease-in-out infinite;
+  }
+
+  .animate-pulse-gold {
+    animation: pulse-gold 2.5s ease-in-out infinite;
+  }
+
+  .animate-twinkle {
+    animation: twinkle 2.5s ease-in-out infinite;
+  }
+
+  .animate-twinkle-delayed {
+    animation: twinkle-delayed 3s ease-in-out infinite 0.5s;
+  }
+
+  .animate-parallax-slow {
+    animation: parallax-slow 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in-slow {
+    animation: fade-in-slow 1.2s ease-out forwards;
+  }
+
+  .animate-word-bounce {
+    animation: word-bounce 0.6s ease-in-out infinite;
+  }
+
+  /* Swing Animation for Pendulum Effect */
+  @keyframes swing {
+    0%,
+    100% {
+      transform: rotate(0deg);
+      transform-origin: top center;
+    }
+    25% {
+      transform: rotate(2deg);
+      transform-origin: top center;
+    }
+    75% {
+      transform: rotate(-2deg);
+      transform-origin: top center;
+    }
+  }
+
+  .animate-swing {
+    animation: swing 3s ease-in-out infinite;
+  }
+
+  /* Gentle Pulse Fade for Background Elements */
+  @keyframes fade-gentle {
+    0%,
+    100% {
+      opacity: 0.08;
+    }
+    50% {
+      opacity: 0.12;
+    }
+  }
+
+  .animate-fade-gentle {
+    animation: fade-gentle 4s ease-in-out infinite;
+  }
+
+  /* Stagger Delays for Multi-Element Animations (used with any animation) */
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  /* Reduce Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
