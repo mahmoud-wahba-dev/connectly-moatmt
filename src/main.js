@@ -9,20 +9,63 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       window.HSStaticMethods.autoInit();
     }
+
+    // Setup video interactions after FlyonUI initialization
+    setupVideoHoverInteractions();
   }, 100);
 });
-const videos = document.querySelectorAll("video");
 
-videos.forEach((video) => {
-  // يخلي الفيديو واقف في البداية
-  video.pause();
+// Setup video hover interactions
+function setupVideoHoverInteractions() {
+  const videos = document.querySelectorAll("video");
 
-  video.addEventListener("mouseenter", () => {
-    video.play();
-  });
+  if (videos.length === 0) {
+    console.log("No videos found");
+    return;
+  }
 
-  video.addEventListener("mouseleave", () => {
+  videos.forEach((video) => {
+    // Ensure video is paused initially
     video.pause();
-    video.currentTime = 0; // اختياري
+
+    // Get the parent container for hover
+    const container = video.closest(".group") || video.parentElement;
+
+    if (container) {
+      // Mouse enter - play video
+      container.addEventListener("mouseenter", () => {
+        if (video.paused) {
+          video.play().catch((error) => {
+            console.log("Video play error:", error);
+          });
+        }
+      });
+
+      // Mouse leave - pause video
+      container.addEventListener("mouseleave", () => {
+        if (!video.paused) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+
+      // Touch events for mobile
+      container.addEventListener("touchstart", () => {
+        if (video.paused) {
+          video.play().catch((error) => {
+            console.log("Video play error:", error);
+          });
+        }
+      });
+
+      container.addEventListener("touchend", () => {
+        if (!video.paused) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+    }
   });
-});
+
+  console.log(`Video hover setup completed for ${videos.length} videos`);
+}

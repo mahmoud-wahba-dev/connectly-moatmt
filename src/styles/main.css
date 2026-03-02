@@ -632,4 +632,14 @@ body {
       transition-duration: 0.01ms !important;
     }
   }
+
+  /* Override FlyonUI Carousel Button Positioning */
+  .carousel-prev,
+  .carousel-next {
+    inset-block: auto !important;
+    margin-block: auto !important;
+    position: absolute !important;
+    bottom: initial !important;
+    top: -15% !important;
+  }
 }
