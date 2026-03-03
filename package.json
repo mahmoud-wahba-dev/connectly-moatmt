@@ -9,7 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "flyonui": "^2.4.1"
+    "flyonui": "^2.4.1",
+    "gsap": "^3.14.2"
   },
   "devDependencies": {
     "@iconify-json/bytesize": "^1.2.2",

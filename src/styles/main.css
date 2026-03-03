@@ -9,6 +9,7 @@
 html {
   font-size: clamp(12px, 1vw + 0.5rem, 16px);
   font-family: var(--font-ibm);
+  scroll-behavior: smooth;
 }
 body {
   color: black;
@@ -691,5 +692,53 @@ body {
       
       
     }
+  }
+
+  /* GSAP Animation Performance Optimizations */
+  /* Enable GPU acceleration for animated elements */
+  .navbar,
+  #showcase video,
+  #showcase h1,
+  #showcase p,
+  #showcase .btn,
+  #why-choose-us .grid > div,
+  #pricing .grid > div,
+  #carousel .carousel-item,
+  #carousel .group,
+  #how-to-order .grid > div,
+  #guarantee .marquee-column,
+  footer {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Smooth transitions for hover effects */
+  #carousel .group {
+    transition: transform 0.3s ease;
+  }
+
+  /* Video container optimizations */
+  video {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Remove will-change after animation completes (performance) */
+  .animation-complete {
+    will-change: auto !important;
+  }
+
+
+
+  /* Optimize marquee animations */
+  .marquee-column {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Add smooth opacity transitions */
+  section {
+    transition: opacity 0.3s ease;
   }
 }
