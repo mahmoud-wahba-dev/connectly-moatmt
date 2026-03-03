@@ -686,5 +686,10 @@ body {
     position: absolute !important;
     bottom: initial !important;
     top: -15% !important;
+    @media (max-width: 768px) {
+      top: -12% !important;
+      
+      
+    }
   }
 }

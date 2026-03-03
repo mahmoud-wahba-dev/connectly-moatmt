@@ -36,9 +36,9 @@
 
 <body class="min-h-dvh text-black">
   <!-- Navbar -->
-  <section class="fixed top-0 w-full z-50 ">
+  <section class="fixed top-0 w-full z-50 max-xl:px-4">
     <nav
-      class="navbar  xl:w-[90%] m-auto bg-nav-bg rounded-100px text-white mt-16  flex w-full items-center justify-between gap-2 shadow-base-300/20 shadow-sm">
+      class="navbar  xl:w-[90%] m-auto bg-nav-bg rounded-100px text-white mt-4 xl:mt-16  flex w-full items-center justify-between gap-2 shadow-base-300/20 shadow-sm">
       <div class="navbar-start max-md:w-1/4">
         <a class="    flex items-center  gap-3.5 font-bold text-primary no-underline" href="#">
           <svg width="60" height="42" viewBox="0 0 60 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -98,19 +98,19 @@
 
   <header class="mt-[19%] relative">
     <div class="container">
-      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-12">
-        <div class="xl:col-span-3 relative">
-          <div class="rounded-80px overflow-hidden cursor-grab relative">
+      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-12 gap-6 xl:gap-14">
+        <div class="xl:col-span-3 relative order-2 md:order-1">
+          <div class="rounded-80px overflow-hidden cursor-grab relative max-lg:h-[70vh]">
             <video src="/images/hero-video1.mp4" class="w-full h-full object-cover" autoplay muted loop playsinline>
             </video>
 
           </div>
           <div
-            class="absolute top-[15%] end-[10%] xl:top-[-11%] xl:end-[-20%] center_flex rounded-80px border border-[5px] border-white overflow-hidden  max-w-[154px] max-h-[185px]">
+            class="absolute top-[15%] end-[10%] xl:top-[-11%] xl:end-[-20%] center_flex rounded-80px border border-[5px] border-white overflow-hidden  max-w-[70px] max-h-[100px]  xl:max-w-[154px] xl:max-h-[185px]">
             <img src="/images/hero-img11.webp" alt="bakina cosmetic" class="w-full h-full object-cover" />
           </div>
         </div>
-        <div class="xl:col-span-6 text-center centered">
+        <div class="xl:col-span-6 text-center centered order-1 md:order-2">
           <div>
             <div class="bg-[#ED2D481A] rounded-40px mb-10 flex items-center gap-2.5 p-2.5 w-fit m-auto">
               <div class="size-9 bg-black center rounded-full  text-base">
@@ -199,14 +199,14 @@
             </div>
           </div>
         </div>
-        <div class="xl:col-span-3 relative">
-          <div class="rounded-80px overflow-hidden cursor-grab relative">
+        <div class="xl:col-span-3 relative order-3">
+          <div class="rounded-80px overflow-hidden cursor-grab relative max-lg:h-[70vh]">
             <video src="/images/hero-video2.mp4" class="w-full h-full object-cover" autoplay muted loop playsinline>
             </video>
 
           </div>
           <div
-            class="absolute bottom-[-11%] start-[-20%] center_flex rounded-80px border border-[5px] border-white overflow-hidden  max-w-[154px] max-h-[185px]">
+            class="absolute bottom-[2%] start-[5%] xl:bottom-[-11%] xl:start-[-20%] center_flex rounded-80px border border-[5px] border-white overflow-hidden max-w-[70px] max-h-[100px]  xl:max-w-[154px] xl:max-h-[185px]">
             <img src="/images/hero-img2.webp" alt="bakina cosmetic" class="w-full h-full object-cover" />
           </div>
         </div>
@@ -876,7 +876,7 @@
         </h2>
 
       </div>
-      <p class="font-light text-22px text-white mb-12 ">
+      <p class="font-light text-22px text-white lg:mb-12 mb-28 ">
         تصفح أعمال مبدعينا وشوف جودة التصوير بنفسك
       </p>
 
@@ -1143,7 +1143,7 @@
 
 
         <button type="button"
-          class="carousel-prev carousel-disabled:opacity-30 absolute end-[30%] !top-[-15%] size-10 bg-transparent  text-white flex items-center justify-center max-w-[160px] hover:bg-white hover:text-black transition-all z-10">
+          class="carousel-prev carousel-disabled:opacity-30 absolute end-[30%] !top-[-15%] max-lg:end-[20%]  size-10 bg-transparent  text-white flex items-center justify-center max-w-[160px] hover:bg-white hover:text-black transition-all z-10">
           <span class="icon-[bytesize--arrow-left] size-12  "></span>
           <span class="sr-only">Previous</span>
         </button>
@@ -1225,8 +1225,8 @@
         </div>
 
 
-        <div class="flex items-center justify-center max-w-[160px] ">
-          <img src="/public/images/arrow-left1.webp" alt=" arrow" class="">
+        <div class="flex items-center justify-center h-fit lg:max-w-[160px] max-lg:rotate-[270deg]">
+          <img src="/public/images/arrow-left1.webp" alt=" arrow" class="max-w-[160px] w-full h-auto object-cover" />
         </div>
 
 
@@ -1251,7 +1251,7 @@
         </div>
 
 
-        <div class="flex items-center justify-center max-w-[160px]">
+        <div class="flex items-center justify-center max-w-[160px] max-lg:rotate-[270deg]">
           <img src="/public/images/arrow-left2.webp" alt=" arrow" class="">
         </div>
 
